@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="800.0" prefWidth="1000.0" styleClass="background"
+            stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.srjc.af.austin.eral.handwritten_calculator.ImageCalculatorController">
+    <children>
+        <MenuBar style="-fx-background-color: RGBA(255, 255, 255, .5);">
+            <Menu text="Neural Network">
+                <MenuItem fx:id="trainNetworkButton" onAction="#onTrain" text="Train Network"/>
+                <MenuItem onAction="#onChooseFile" text="Select Training File"/>
+                <MenuItem onAction="#onToggleTrainingMode" text="Toggle Training Mode"/>
+                <MenuItem onAction="#onChangeNetworkParameters" text="Change Neural Network Parameters"/>
+            </Menu>
+            <Menu text="Help">
+                <MenuItem onAction="#onGetHelp" text="Get Help"/>
+            </Menu>
+        </MenuBar>
+        <Button fx:id="clear1" layoutX="200.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#onClear1"
+                prefHeight="50.0" prefWidth="100.0" text="Clear" textFill="#393939">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <Button fx:id="teachNum" disable="true" layoutX="400.0" layoutY="736.0" mnemonicParsing="false"
+                onMouseClicked="#onTeachNum" prefHeight="50.0" prefWidth="200.0" text="Teach Number" visible="false">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <Pane fx:id="pane1" layoutX="50.0" layoutY="100.0" opacity="0.4" prefHeight="400.0" prefWidth="400.0"
+              style="-fx-background-color: #ffffff;">
+            <children>
+                <Canvas fx:id="canvas1" height="400.0" width="400.0"/>
+            </children>
+        </Pane>
+        <Pane fx:id="pane2" layoutX="550.0" layoutY="100.0" opacity="0.4" prefHeight="400.0" prefWidth="400.0"
+              style="-fx-background-color: #ffffff;">
+            <children>
+                <Canvas fx:id="canvas2" height="400.0" width="400.0"/>
+            </children>
+        </Pane>
+        <Button fx:id="clear2" layoutX="700.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#onClear2"
+                prefHeight="50.0" prefWidth="100.0" text="Clear" textFill="#393939">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <HBox>
+
+        </HBox>
+        <Button fx:id="btnAdd" layoutX="450.0" layoutY="100.0" mnemonicParsing="false" onAction="#add"
+                prefHeight="100.0" prefWidth="100.0" text="+" textFill="#393939" wrapText="true">
+            <font>
+                <Font size="45.0"/>
+            </font>
+        </Button>
+        <Button fx:id="btnSubtract" layoutX="450.0" layoutY="200.0" mnemonicParsing="false" onAction="#subtract"
+                prefHeight="100.0" prefWidth="100.0" text="−" textFill="#393939">
+            <font>
+                <Font size="45.0"/>
+            </font>
+        </Button>
+        <Button fx:id="btnMultiply" layoutX="450.0" layoutY="300.0" mnemonicParsing="false" onAction="#multiply"
+                prefHeight="100.0" prefWidth="100.0" text="×" textFill="#393939">
+            <font>
+                <Font size="45.0"/>
+            </font>
+        </Button>
+        <Button fx:id="btnDivide" layoutX="450.0" layoutY="400.0" mnemonicParsing="false" onAction="#divide"
+                prefHeight="100.0" prefWidth="100.0" text="÷" textFill="#393939">
+            <font>
+                <Font size="45.0"/>
+            </font>
+        </Button>
+        <Text fx:id="answer" fill="#393939" layoutX="203.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              textAlignment="CENTER" wrappingWidth="594.0000032186508">
+            <font>
+                <Font size="96.0"/>
+            </font>
+        </Text>
+        <TextField fx:id="numberField" disable="true" layoutX="440.0" layoutY="604.0" onKeyTyped="#onNumberTyped"
+                   prefHeight="120.0" prefWidth="120.0" styleClass="button" stylesheets="@style.css" visible="false">
+            <font>
+                <Font size="50.0"/>
+            </font>
+        </TextField>
+        <Text fx:id="result1" fill="WHITE" layoutX="163.0" layoutY="84.0" opacity="0.4" stroke="WHITE"
+              strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="173.00000321865082">
+            <font>
+                <Font size="50.0"/>
+            </font>
+        </Text>
+        <Text fx:id="result2" fill="WHITE" layoutX="663.0" layoutY="84.0" opacity="0.4" strokeType="OUTSIDE"
+              strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="173.00000321865082">
+            <font>
+                <Font size="50.0"/>
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

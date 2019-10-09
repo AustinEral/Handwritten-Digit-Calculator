@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<AnchorPane prefHeight="450.0" prefWidth="500.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.srjc.af.austin.eral.handwritten_calculator.NetworkParametersController">
+   <children>
+      <Text fx:id="hiddenNeuronsText" layoutX="314.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="53.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="learningRate" layoutX="275.0" layoutY="20.0" onAction="#onChangeLearningRate" prefHeight="45.0" prefWidth="200.0" promptText="0.5" styleClass="button">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="momentum" layoutX="275.0" layoutY="70.0" onAction="#onChangeMomentum" prefHeight="45.0" prefWidth="200.0" promptText="0.2" styleClass="button">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="decay" layoutX="275.0" layoutY="120.0" onAction="#onChangeDecay" prefHeight="45.0" prefWidth="200.0" promptText="1.0" styleClass="button">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="numHiddenNeurons" layoutX="275.0" layoutY="170.0" onAction="#onChangeNumHiddenNeurons" prefHeight="45.0" prefWidth="200.0" promptText="20" styleClass="button">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Text fill="WHITE" layoutX="25.0" layoutY="52.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Learning Rate" wrappingWidth="149.00000542402267">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="25.0" layoutY="102.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Momentum" wrappingWidth="149.00000542402267">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="25.0" layoutY="152.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Decay" wrappingWidth="149.00000542402267">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="25.0" layoutY="202.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Hidden Neurons" wrappingWidth="242.00000542402267">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="25.0" layoutY="252.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting Weight Random Seed" wrappingWidth="252.00000542402267">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="25.0" layoutY="302.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting Weight Range" wrappingWidth="242.00000427663326">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextField fx:id="randomSeed" layoutX="275.0" layoutY="220.0" onAction="#onChangeRandomSeed" prefHeight="45.0" prefWidth="200.0" promptText="731782543" styleClass="button">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="weightRange" layoutX="275.0" layoutY="270.0" onAction="#onChangeWeightRange" prefHeight="45.0" prefWidth="200.0" promptText="20" styleClass="button">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Button fx:id="resetButton" layoutX="25.0" layoutY="391.0" mnemonicParsing="false" onAction="#resetNetwork" prefHeight="45.0" prefWidth="200.0" text="Reset Network Weights" textFill="#393939">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fx:id="result1" fill="WHITE" layoutX="163.0" layoutY="140.0" opacity="0.4" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="173.00000321865082">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="25.0" layoutY="369.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Network Fitness Ratio" wrappingWidth="242.00000427663326">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="fitnessResult" fill="WHITE" layoutX="282.0" layoutY="370.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="190.00000427663326">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Line endX="350.0" layoutX="125.0" layoutY="331.0" opacity="0.4" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+      <Button fx:id="okButton" layoutX="275.0" layoutY="391.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="45.0" prefWidth="200.0" text="OK" textFill="#393939">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
